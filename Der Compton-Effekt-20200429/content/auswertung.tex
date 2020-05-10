@@ -1,0 +1,143 @@
+\section{Auswertung}
+\label{sec:Auswertung}
+
+\subsection{Kupfer K-Linien}
+
+Die Energien der Kupfer $K_{\alpha}$ und $K_{\beta}$ Linie betragen \cite{kline}:
+
+\begin{itemize}
+  \item $E_{K_{\alpha}} = \SI{8.038}{\kilo\electronvolt}$
+  \item $E_{K_{\beta}} = \SI{8.905}{\kilo\electronvolt}$
+\end{itemize}
+
+Gemäß \autoref{eq:enrgy} ergeben sich die Wellenlängen
+
+\begin{itemize}
+  \item $\lambda_{\alpha} = \SI{154.248}{\pico\metre}$
+  \item $\lambda_{\beta} = \SI{139.230}{\pico\metre}$
+  %\label{itm:labda}
+\end{itemize}
+
+für die charakteristische Kupferlinien.\\
+Mit der \autoref{eq:bragg} und \autoref{eq:enrgy} wird so diesen Wellenlängen ein Bragg-Winkel zugeordnet:
+
+\begin{align*}
+  \alpha_{K_{\alpha}} \approx \ang{22.517}\\
+  \alpha_{K_{\beta}} \approx \ang{20.225}
+\end{align*}
+
+Die Gitterkonstante beträgt $d_{LiF} = \SI{201.4}{\pico\metre}$.\\
+\\
+In \autoref{fig:emissCu} sind die beiden K-Linien dargestellt.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics{copper.pdf}
+  \caption{Plot über die Verteilung der Impulse pro Sekunde beim Winkel $\theta$. Es sind eindeutig zwei Peaks zu erkennen, die die charakteristische Kupferlinien $K_\alpha$ und $K_{\beta}$ sind. Es ist ebenfalls der Bremsberg bei $\SI{7}{\degree}$ bis ca. $\SI{15.5}{\degree}$ zu erkennen.}
+  \label{fig:emissCu}
+\end{figure}
+
+Für die Peaks gilt:
+
+\begin{align*}
+  K_{\alpha} \text{ bei ca. } \ang{22.5}\\
+  K_{\beta} \text{ bei ca. } \ang{20.2}
+\end{align*}
+
+Mithilfe der \autoref{eq:bragg} ergeben sich aus den Winkeln folgende Wellenlängen:
+
+\begin{align*}
+  \lambda_{K_{\alpha}} \text{ bei ca. } \SI{154.145}{\pico\metre}\\
+  \lambda_{K_{\beta}} \text{ bei ca. } \SI{139.086}{\pico\metre}
+\end{align*}
+
+Daraus ergeben sich die Energien:
+
+\begin{align*}
+  E_{K_{\alpha}} \text{ bei ca. } \SI{8.043}{\kilo \electronvolt}\\
+  E_{K_{\beta}} \text{ bei ca. } \SI{8.914}{\kilo \electronvolt}
+\end{align*}
+\newpage
+\subsection{Transmission}
+
+Zuerst wird die Totzeit-Korrektur, nach \autoref{eq:deadtime} auf die Messwerte angewendet.
+Die Transmission ergibt sich aus dem Quotienten von $I_{Al}/I_{0}$.\\
+In \autoref{tab:dead} ist die Transmission der korrigierten Werte für den Winkel $\theta$ und der daraus folgenden Wellenlänge $\lambda$ aufgeführt.
+Die Wellenlänge wurde mithilfe der \autoref{eq:bragg} berechnet. Die Fehler wurden mittels \autoref{eq:gauss} für jedes einzelne $T$ berechnet. Ein Rechenbeispiel ist bei \autoref{eq:bsp}.\\
+Die Werte sind in \autoref{fig:trans} dargestellt, wobei die Ausgleichsgerade die Steigung $m = (-0.0152\pm0.0002)\ \frac{T}{\lambda}$ und den y-Achsenabschnitt $n = (1.2302\pm0.0138)\ T$ hat, wobei diese Parameter mithilfe von Pythons \textit{polyfit} Funktion \cite{numpy} ermittelt wurden.
+Die Ausgleichsgerade ist also die Funktion:
+\begin{equation}
+  T(\lambda) = m\cdot \lambda\ +\ n
+  \label{eq:fkt}
+\end{equation}
+
+\begin{table}
+  \centering
+  \caption{Transmission der korrigierten Werte, sowie die dazugehörigen Wellenlängen.}
+  \csvreader[tabular=c|c|c|c,
+  head=false, 
+  table head= Winkel $\theta$ & Wellenlänge $\lambda$ in $pm$ & Transmission $T$ & Fehler von $T$ \\\midrule,
+  late after line= \\]
+  {tabelle1.csv}{1=\eins, 2=\zwei, 3=\drei, 4=\vier}{$\num{\eins}$ & $\num{\zwei}$ & $\num{\drei}$ & $\num{\vier}$}
+  \label{tab:dead}
+\end{table}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics{compton.pdf}
+  \caption{Die Transmission ist hier gegen die Wellenlänge aufgetragen. Mit zunehmender Wellenlänge nimmt diese linear ab.}
+  \label{fig:trans}
+\end{figure}
+\newpage
+\subsection{Bestimmung der Compton-Wellenlänge}
+Es werden 3 Impulsraten betrachtet. $I_0$ für den Fall, dass kein Absorber vorhanden ist, $I_1$ wenn der Aluminium-Absorber zwischen Röntgenröhre und Streuer ist
+und $I_2$, wenn dieser zwischen Streuer und Zählrohr liegt.
+Da die Anzahl der Röntgenquanten Poisson-Verteilt ist, wird jedem Impuls ein Fehler von $\Delta N = \sqrt{N}$ zu geordnet.
+Um den Fehler der vorliegenden Impulsraten zu bestimmen, muss die \autoref{eq:deadtime} nach dem Impuls $N$ umgestellt werden.
+Daraus ergeben sich die Impulse mit $\Delta N$:
+
+\begin{align*}
+  N_0 = 2730.33 \pm 52.25\\
+  N_1 = 1179.87 \pm 34.35\\
+  N_2 = 1023.91 \pm 32
+\end{align*}
+
+Mithilfe der Gauß'schen Fehlerfortpflanzung in \autoref{eq:gauss} wird nun der fehlerbehaftete Wert der Impulsraten ermittelt:
+
+\begin{equation}
+  \label{eq:bsp}
+  \Delta I = \frac{d}{dN}(\frac{N}{(1\ -\ a\cdot N)})\cdot \Delta N \quad\text{mit}\quad a = 90\cdot10^{-9}\ \sec
+\end{equation}
+
+\begin{equation}
+  = \frac{1}{(1\ -\ a\cdot N)^2}\cdot \Delta N
+\end{equation}
+
+Wenn die Werte für $N_0$, $N_1$ und $N_2$ in \autoref{eq:bsp} eingesetzt werden, ergeben sich die Werte der Impulsraten mit Fehler:
+\begin{align*}
+  I_0 = 2731\pm 52.278\\
+  I_1 = 1180\pm 34.349\\
+  I_2 = 1024\pm 31.999
+\end{align*}
+
+Hieraus ergeben sich die Transmissionen:
+
+\begin{align*}
+  T_1 = \frac{I_1}{I_0} = 0.432\pm 0.015\\
+  T_2 = \frac{I_2}{I_0} = 0.375\pm 0.014
+\end{align*}
+
+Somit muss die \autoref{eq:fkt} nur noch nach $\lambda$ umgestellt werden, um die Wellenlänge für die Transmissionen zu erhalten:
+
+\begin{align*}
+  \lambda_1 = \frac{T_1\ -\ n}{m} = (52.513 \pm 1.508)\si{\pico\metre}\\
+  \lambda_2 = \frac{T_2\ -\ n}{m} = (56.263 \pm 1.490)\si{\pico\metre}
+\end{align*}
+
+Die Compton Wellenlänge wäre demnach:
+\begin{equation}
+  \lambda_C = \lambda_2\ -\ \lambda_1 = (3.75\pm 1.35)\si{\pico\metre}
+  \label{eq:eigencomp}
+\end{equation}
+Eine Totzeit-Korrektur ist hier nicht nötig, da die $Imp\si{\per\second}$ vom höchsten Wert $I_0$, lediglich ca. $9.1\ Imp/s$ beträgt und die Totzeit von $\SI{90}{\micro\second}$ lediglich die 4te Nachkommastelle verändert.
+Die theoretische Compton-Wellenlänge beträgt nach \autoref{eq:compton} ca. $\SI{2.426}{\pico\metre}$.

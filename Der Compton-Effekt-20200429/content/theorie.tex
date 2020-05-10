@@ -1,0 +1,72 @@
+\section{Theorie}
+\label{sec:Theorie}
+
+\subsection{Der Compton-Effekt}
+
+Der Compton-Effekt beschreibt das physikalische Prinzip, wenn ein ausreichend energetisches Photon der Wellenlänge $\lambda_1$ auf ein Atom prallt und bei dem inelastischen Stoß mit einer niedrigeren Energie weiterfliegt.
+Dazu muss das Photon auf ein schwach gebundenes Elektron treffen, dem es einen Teil seiner Energie abgibt.
+Die Austrittswellenlänge wäre dann $\lambda_2$, welche zusätzlich um den Winkel $\theta$ abgelenkt wird.\\
+Die Gleichung für die Energie des Photons (in $eV$) lautet:
+
+\begin{equation}
+    E_{Photon} = \frac{h\cdot c}{\lambda \cdot 1.6022\cdot 10^{-19}}
+    \label{eq:enrgy}
+\end{equation}
+
+Der Unterschied der Wellenlänge jenes Photons $\Delta \lambda = \lambda_2\ -\ \lambda_2$ kann auch über den Austrittswinkel $\theta$ bestimmt werden:
+
+\begin{equation}
+    \Delta \lambda = \frac{h}{m_e\cdot c}(1\ -\ \cos{\theta})
+    \label{eq:compton}
+\end{equation}
+
+Hierbei ist der Vorfaktor $\frac{h}{m_e\cdot c}$ die sogenannte \textit{Compton-Wellenlänge} $\lambda_C$.\\
+Die Wellenlängendifferenz $\Delta \lambda$ wird nach \autoref{eq:compton} demnach bei $\theta = \pi$, also $180°$ maximal, nämlich $2\cdot \lambda_C$.
+
+\subsection{Erzeugung der Röntgenstrahlung}
+
+Die charakteristische Röntgenstrahlung entsteht durch den Aufprall energiereicher Elektronen auf ein bestimmtes Material.
+Dazu werden die Elektronen von einer Glühkathode auf eine Anode, in einer evakuierten Umgebung, aus dem nötigen Material beschleunigt.
+Da energiereiche Elektronen ionisierende Strahlung sind, ionisieren sie das Anodenmaterial.
+Das führt dazu, dass ein energiereiches Elektron im Atom in einen energieärmeren Zustand versetzt wird, also in eine innere Schale wandert.
+Dieser Energieverlust wird als charakteristische Röntgenstrahlung emittiert. 
+Deshalb besteht ein Spektrum der Strahlung aus klaren, scharfen Linien.
+\\
+\\
+Im selben Spektrum findet sich aber auch ein kontinuierliches Spektrum von Röntgenlicht.
+Dies entsteht wegen der Bremsstrahlung, welche das beschleunigte Elektron auslöst, wenn es ins Coulomb-Feld des Atoms gerät und abgebremst wird.
+Da das Elektron bei diesem Prozess einen Teil, bis hin zur Gesamtenergie, in Form von Strahlung abgeben kann, wird ein kontinuierliches Spektrum emittiert.
+
+\subsection{Die Bragg'sche Bedingung}
+
+Um das Röntgenlicht zu analysieren, wird die Bragg'sche Reflexion verwendet.\\
+Hierbei werden die Photonen unter einem bestimmten Winkel $\alpha$ an einen Gitterkristall gesendet, sodass konstruktive Interferenz entsteht.
+Zusammen mit der Gitterkonstante $d$ und der Beugungsordnung $n$, lässt sich damit die Wellenlänge nachweisen.
+Die Formel der Bragg'schen Bedingung lautet:
+
+\begin{equation}
+    2d\sin{\alpha} = n\cdot \lambda
+    \label{eq:bragg}
+\end{equation}
+
+\subsection{Totzeit im Geiger-Müller-Zählrohr}
+
+Das Geiger-Müller-Zählrohr besteht aus einem Zylinder gefüllt mit Gas, einer Wandkathode und einer Stabanode.
+Wenn ionisierende Strahlung mit dem Gas in Berührung kommt, werden Elektronen freigesetzt, die die Anode aufnimmt und als Signal weitergibt.
+Sind allerdings alle Gasatome angeregt, so wird die Intensität der Strahlung verfälscht. 
+Die Zeit bis sich die Gasatome wieder neutralisieren, nennt man \textit{Totzeit} $\tau$.
+Zur Behebung des Fehlers reicht die Gleichung:
+
+\begin{equation}
+    I = \frac{N}{1\ -\ \tau N}
+    \label{eq:deadtime}
+\end{equation}
+
+\subsection{Gauß'sche Fehlerfortpflanzung}
+
+Die Formel für die Gauß'sche Fehlerfortpflanzung einer Messgröße $x$ mit Fehler $\Delta x$ lautet:
+
+\begin{equation}
+    y(x\ +\ \Delta x) = y(x)\ +\ \frac{dy}{dx}\cdot \Delta x = y\ +\ \Delta y
+    \label{eq:gauss}
+\end{equation}
