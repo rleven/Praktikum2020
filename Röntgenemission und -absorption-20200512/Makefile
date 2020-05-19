@@ -4,8 +4,14 @@ all: build/main.pdf
 build/bragg.pdf: plot.py matplotlibrc header-matplotlib.tex | build
 	TEXINPUTS=$$(pwd): python plot.py
 
+build/emiss.pdf: plot.py matplotlibrc header-matplotlib.tex | build
+	TEXINPUTS=$$(pwd): python plot.py
+
+build/six.pdf: plot.py matplotlibrc header-matplotlib.tex | build
+	TEXINPUTS=$$(pwd): python plot.py
+
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
-build/main.pdf: build/bragg.pdf
+build/main.pdf: build/bragg.pdf build/emiss.pdf build/six.pdf
 
 build/main.pdf: FORCE | build
 	  TEXINPUTS=build: \
