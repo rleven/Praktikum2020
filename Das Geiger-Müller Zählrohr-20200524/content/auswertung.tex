@@ -1,12 +1,59 @@
+\newpage
 \section{Auswertung}
 \label{sec:Auswertung}
+
+\subsection{Charakteristik des Zählrohrs}
 
 \begin{figure}
   \centering
   \includegraphics{plot.pdf}
-  \caption{Plot.}
+  \caption{Darstellung des Geiger-Plateaus.}
   \label{fig:plot}
 \end{figure}
 
 
-Siehe \autoref{fig:plot}!
+In \autoref{fig:plot} sind die Messdaten des Zählrohrs dargestellt.
+Die Unsicherheiten der Impulse sind Poisson-verteilt, sodass $\Delta N = \sqrt{N}$.
+Die Steigung des Plateaus(blaue Linie) beträgt $1.316\pm0.22\ \text{Imp/V}$.
+Das ergibt einer Steigung von ca 131.6 Impulsen pro $\SI{100}{\volt}$.
+Die Zählrate im Plateau liegt im Bereich von 10000 und die Integrationszeit bei $t = \SI{60}{\second}$, damit eine Totzeitkorrektur nicht notwendig ist.
+
+\subsection{Bestimmung der Totzeit}
+Die gemessenen Werte für $N_1$, $N_2$ und $N_{1+2}$ sind:
+\begin{align*}
+  N_1 = 96041\ \text{Imp/120s}\\
+  N_2 = 76518\ \text{Imp/120s}\\
+  N_{1+2} = 158479\ \text{Imp/120s}
+\end{align*}
+
+Nach \autoref{eq:tot} liegt die Totzeit bei etwa $957.971\si{\micro\second}$.
+
+\subsection{Bestimmung des Zählrohrstroms}
+Die Werte für die Anzahl Z der freigesetzten Ladungen pro eingefallenem Teilchen stehen in \autoref{tab:zzahl}.
+Die Unsicherheit der Stromstärke beträgt $\Delta A = \SI{0.05}{\micro\ampere}$.
+
+\begin{table}
+  \centering
+  \caption{Liste der gegebenen Werte, sowie der freigesetzten Ladungen mit Fehler.}
+  \csvreader[tabular=c|c|c|c|c,
+  head=false, 
+  table head= Spannung $U$ in $\si{\volt}$ & Strom $I$ in $\si{\micro}\text{A}$ & Anzahl Impulse $N$ & Ladungen $Z$ & Fehler von $Z$\\\midrule,
+  late after line= \\]
+  {tabelle1.csv}{1=\eins, 2=\zwei, 3=\drei, 4=\vier, 5=\funf}{$\num{\eins}$ & $\num{\zwei}$ & $\num{\drei}$ & $\num{\vier}$ & $\num{\funf}$}
+  \label{tab:zzahl}
+\end{table}
+
+Das ergibt einen nahezu linearen Anstieg der freigesetzten Ladungen, wie in \autoref{fig:elem} zu erkennen ist.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics{element.pdf}
+  \caption{Anzahl der freigesetzten Ladungen mit zunehmender Zählrohrspannung.}
+  \label{fig:elem}
+\end{figure}
+
+Die Unsicherheiten wurden mithilfe des Gauß'schen Fehlerfortpflanzungsgesetzes ermittelt:
+\begin{equation}
+  y(x\ +\ \Delta x) = y(x)\ +\ \frac{dy}{dx}\cdot \Delta x = y\ +\ \Delta y
+  \label{eq:gauss}
+\end{equation}
