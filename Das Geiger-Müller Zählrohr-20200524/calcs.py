@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import csv
 
 def zahl(strom, numb):
-    return strom*10**(-9)/(con.elementary_charge*numb)
+    return strom*10**(-6)/(con.elementary_charge*numb)
 
 u = np.genfromtxt('Data/Zaehlrohrstrom.dat', unpack=True, usecols=0)
 I = np.genfromtxt('Data/Zaehlrohrstrom.dat', unpack=True, usecols=1)
