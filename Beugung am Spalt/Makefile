@@ -1,11 +1,15 @@
 all: build/main.pdf
 
 # hier Python-Skripte:
-build/plot.pdf: plot.py matplotlibrc header-matplotlib.tex | build
-	TEXINPUTS=$$(pwd): python plot.py
+build/double.pdf: plot1.py matplotlibrc header-matplotlib.tex | build
+	TEXINPUTS=$$(pwd): python plot1.py
 
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
-build/main.pdf: build/plot.pdf
+
+build/single.pdf: plot2.py matplotlibrc header-matplotlib.tex | build
+	TEXINPUTS=$$(pwd): python plot2.py
+
+build/main.pdf: build/double.pdf build/single.pdf
 
 build/main.pdf: FORCE | build
 	  TEXINPUTS=build: \
