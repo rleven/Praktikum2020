@@ -1,0 +1,8 @@
+#Note: in der zweiten Messung zwischendurch angehalten
+#Hebeluntersetzung Ü = 1:5.046
+#Impulse    Abstand [mm*10]  
+3102    52.6
+3105    54.5
+3102    52.5
+3102    52.6
+3098    52.6

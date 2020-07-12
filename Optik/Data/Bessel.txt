@@ -1,0 +1,9 @@
+#Brennweite Linse = 50 mm
+#g1 ist Blende-Linse
+#b1 ist Linse-Schirm
+#g1     b1      g2      b2
+19.2    20.2    21.6    17.7
+12.4    45.3    44.9    12.8
+11.8    53      52.5    12.3
+11.6    59.6    59.2    12
+11      74.4    73.7    11.7
