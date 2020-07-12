@@ -1,0 +1,14 @@
+#Konvex
+#Brennweite = ? [100 mm]
+#LS = Abstand Linse Schirm [cm]
+#BL = Abstand Blende Linse [cm]
+#LS    BL
+45.3    12.2
+85      10.9
+78.9    11.3
+75.5    11.3
+69.1    11.6
+61.2    11.7
+52      12
+28.8    14.9
+15.5    25.3

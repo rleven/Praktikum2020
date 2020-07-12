@@ -1,0 +1,7 @@
+#Brennweite Linse = 100 mm
+#Brennweite Linse konkav = -100mm
+#g1 ist Blende-Linse
+#b1 ist Linse-Schirm
+#G      B       g'      b'
+2.9     4.7     19.4    109.9
+2.9     1.8     36.7    92.6

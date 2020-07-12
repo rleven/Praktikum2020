@@ -1,0 +1,9 @@
+#Druck = 0.2 Bar
+#Druck verändert sich gerne mal um 0.3 Bar
+#Hebeluntersetzung Ü = 1:5.046
+#Impulse    Abstand [mm*10]
+3102    50.7
+3111    52.2
+3102    52.5
+3103    52.9
+3105    52.5
