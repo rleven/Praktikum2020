@@ -1,12 +1,71 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
-\begin{figure}
+Für drei Erd-Verbindungen wurden jeweils drei Messungen vorgenommen.\\
+In \autoref{tab:tab1} sind die gemessenen Widerstände und Brückenspannungen aufgelistet.
+Die Spannungen sind jeweils in \si{\milli\volt} und die Widerstände in \si{\milli\ohm}.
+
+\begin{table}
   \centering
-  \includegraphics{plot.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
-\end{figure}
+  \caption{Messdaten der drei seltenen Erden.}
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c}
+    $U_{Br}^{leer}$ & $R^{leer}$ & $U_{Br}^{Dy}$ & $R^{Dy}$ & $U_{Br}^{leer}$ & $R^{leer}$ & $U_{Br}^{Gd}$ & $R^{Gd}$ & $U_{Br}^{leer}$ & $R^{leer}$ & $U_{Br}^{Nd}$ & $R^{Nd}$\\
+    \midrule
+    2.25 & 3097.5 & 3.5 & 1555 & 2.4 & 3077.5 & 2.3 & 2315 & 2.65 & 3085 & 2.6 & 2978.5\\
+    2.3 & 3112.5 & 3.5 & 1555 & 2.5 & 3100 & 2.3 & 2315 & 2.65 & 3085 & 2.65 & 2995\\
+    2.35 & 3087.5 & 3.5 & 1537.5 & 2.6 & 3082.5 & 2.25 & 2315 & 2.7 & 3085 & 2.6 & 2990\\
+  \end{tabular}}
+  \label{tab:tab1}
+\end{table}
 
+Nach \autoref{eq:chir} ergeben sich daraus folgende Werte für $\chi_R$:
+\begin{table}
+  \centering
+  \caption{Experimentelle Werte für $\chi_R$ der drei Erden, über die Widerstände berechnet.}
+  \label{tab:tab2}
+  \begin{tabular}{c|c|c}
+    $\chi_{Dy}$ & $\chi_{Gd}$ & $\chi_{Nd}$\\
+    \midrule
+    7.7405 & 5.7160 & 0.3791\\
+    7.7781 & 5.8420 & 0.3203\\
+    7.8033 & 5.7442 & 0.3381\\
+  \end{tabular}
+\end{table}
 
-Siehe \autoref{fig:plot}!
+Daraus ergeben sich die Mittelwerte mit Fehler, laut \autoref{eq:std}:
+\begin{align*}
+  \bar{\chi}_{Dy} = 7.774\pm 0.032\\
+  \bar{\chi}_{Gd} = 5.77\pm 0.07\\
+  \bar{\chi}_{Nd} = 0.346\pm 0.03
+\end{align*}
+
+Eine weitere Möglichkeit ist $\chi$ über die Speisespannung und die Brückenspannung zu ermitteln, nach \autoref{eq:chiu}.
+In \autoref{tab:tab3} sind die Werte für $\chi_U$ eingetragen.
+
+\begin{table}
+  \centering
+  \caption{Experimentelle Werte für $\chi_U$ der drei Erden, über die Brückenspannung berechnet.}
+  \label{tab:tab3}
+  \begin{tabular}{c|c|c}
+    $\chi_{Dy}$ & $\chi_{Gd}$ & $\chi_{Nd}$\\
+    \midrule
+    0.1511 & 0.1474 & 0.0793\\
+    0.1468 & 0.1474 & 0.0808\\
+    0.1425 & 0.1442 & 0.0793\\
+  \end{tabular}
+\end{table}
+
+Dessen Mittelwerte sind:
+\begin{align*}
+  \bar{\chi}_{Dy} = 0.147\pm 0.004\\
+  \bar{\chi}_{Gd} = 0.1463\pm 0.0018\\
+  \bar{\chi}_{Nd} = 0.0798\pm 0.0009
+\end{align*}
+
+Die theoretischen Werte berechnen sich über \autoref{eq:chitheo} zu\footnote[1]{Die Werte zur Masse und Anzahl der Momente N wurden hier\cite{v606} entnommen.}:
+\begin{align*}
+  \chi_{Dy}^{theo} = 0.0257\\
+  \chi_{Gd}^{theo} = 0.0146\\
+  \chi_{Nd}^{theo} = 0.0027
+\end{align*}
