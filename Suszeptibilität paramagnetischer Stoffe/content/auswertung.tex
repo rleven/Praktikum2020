@@ -3,6 +3,7 @@
 
 Für drei Erd-Verbindungen wurden jeweils drei Messungen vorgenommen.\\
 In \autoref{tab:tab1} sind die gemessenen Widerstände und Brückenspannungen aufgelistet.
+Die verwendete Speisespannung betrug $\SI{0.72}{\volt}$ bei allen Messungen.
 Die Spannungen sind jeweils in \si{\milli\volt} und die Widerstände in \si{\milli\ohm}.
 
 \begin{table}
@@ -27,17 +28,30 @@ Nach \autoref{eq:chir} ergeben sich daraus folgende Werte für $\chi_R$:
   \begin{tabular}{c|c|c}
     $\chi_{Dy}$ & $\chi_{Gd}$ & $\chi_{Nd}$\\
     \midrule
-    7.7405 & 5.7160 & 0.3791\\
-    7.7781 & 5.8420 & 0.3203\\
-    7.8033 & 5.7442 & 0.3381\\
+    0.0240 & 0.0176 & 0.0012\\
+    0.0243 & 0.0181 & 0.0010\\
+    0.0241 & 0.0177 & 0.0010\\
   \end{tabular}
 \end{table}
 
+Die Formel zur Berechnung des Mittelwerts lautet:
+
+\begin{equation}
+    \bar{x} = \frac{1}{N} \sum_{i=1}^N x_i
+\end{equation}
+
+Der Fehler des Mittelwerts lautet:
+
+\begin{equation}
+    \Delta x = \frac{1}{\sqrt{N}}\sqrt{\frac{1}{N-1}\sum_{i=1}^N (x_i-\bar{x})^2}
+    \label{eq:std}
+\end{equation}
+
 Daraus ergeben sich die Mittelwerte mit Fehler, laut \autoref{eq:std}:
 \begin{align*}
-  \bar{\chi}_{Dy} = 7.774\pm 0.032\\
-  \bar{\chi}_{Gd} = 5.77\pm 0.07\\
-  \bar{\chi}_{Nd} = 0.346\pm 0.03
+  \bar{\chi}_{Dy} = 0.02413\pm 0.00015\\
+  \bar{\chi}_{Gd} = 0.01780\pm 0.00026\\
+  \bar{\chi}_{Nd} = 0.00107\pm 0.00012
 \end{align*}
 
 Eine weitere Möglichkeit ist $\chi$ über die Speisespannung und die Brückenspannung zu ermitteln, nach \autoref{eq:chiu}.

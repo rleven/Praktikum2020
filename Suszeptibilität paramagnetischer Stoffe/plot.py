@@ -45,9 +45,9 @@ und = np.genfromtxt('Data/suszep.txt', unpack=True, usecols=10)
 ohmnd = np.genfromtxt('Data/suszep.txt', unpack=True, usecols=11)
 print('Über Wiederstände bestimmt:')
 for i in range(len(ohmone)):
-    print('Dy: ', chimaster(ohmone[i],ohmone[i]-ohmdy[i], quer(14.08, 7.8)))
-    print('Gd: ', chimaster(ohmtwo[i],ohmtwo[i]-ohmgd[i], quer(9, 7.4)))
-    print('Nd: ', chimaster(ohmthree[i],ohmthree[i]-ohmnd[i], quer(18.5, 7.24)))
+    print('Dy: ', chimaster(998000,ohmone[i]-ohmdy[i], quer(14.08, 7.8)))
+    print('Gd: ', chimaster(998000,ohmtwo[i]-ohmgd[i], quer(9, 7.4)))
+    print('Nd: ', chimaster(998000,ohmthree[i]-ohmnd[i], quer(18.5, 7.24)))
     print('--------')
 print('Über Spannungen bestimmt:')
 for i in range(len(uone)):
