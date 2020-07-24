@@ -1,12 +1,106 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
-\begin{figure}
+\subsection{Überprüfung der Linsengleichung}
+In \autoref{tab:bekannt} sind die Messdaten für die Überprüfung der Linsengleichung aus \autoref{eq:linse} gelistet.
+
+\begin{table}
   \centering
-  \includegraphics{plot.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
+  \caption{Daten der Gegenstandsweite und Bildweite einer Sammellinse in $\si{\centi\metre}$.}
+  \csvreader[tabular=c|c,
+  head=false, 
+  table head= Bildweite $b$ & Gegenstandsweite $g$\\\midrule,
+  late after line= \\]
+  {Data/Bekannt.csv}{1=\eins, 2=\zwei}{$\num{\eins}$ & $\num{\zwei}$}
+  \label{tab:bekannt}
+\end{table}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics{plot1.pdf}
+  \caption{Bildweite und Gegenstandsweite als Referenz für die Genauigkeit der Brennweite.}
+  \label{fig:plot1}
 \end{figure}
 
+Nach \autoref{eq:linse} ergibt sich die durchschnittliche Brennweite:
 
-Siehe \autoref{fig:plot}!
+\begin{align*}
+  \bar{f} = 4.89\pm0.13\si{\centi\metre}
+\end{align*}
+\newpage
+\subsection{Brennweiten-Bestimmung}
+
+Für die Sammellinse unbestimmter Brennweite wurden die Messwerte in \autoref{tab:unbekannt} aufgenommen.
+
+\begin{table}
+  \centering
+  \caption{Daten der Gegenstandsweite und Bildweite einer Sammellinse unbekannter Brennweite in $\si{\centi\metre}$.}
+  \csvreader[tabular=c|c,
+  head=false, 
+  table head= Bildweite $b$ & Gegenstandsweite $g$\\\midrule,
+  late after line= \\]
+  {Data/Unbekannt.csv}{1=\eins, 2=\zwei}{$\num{\eins}$ & $\num{\zwei}$}
+  \label{tab:unbekannt}
+\end{table}
+
+Daraus ergibt sich die Brennweite:
+
+\begin{align*}
+  \bar{f} = 9.77\pm0.12\si{\centi\metre}
+\end{align*}
+\newpage
+\subsection{Brennweite nach Bessel}
+Die Messwerte für die Bestimmung der Brennweite nach Bessel sind in \autoref{tab:bessel} eingetragen.
+
+\begin{table}
+  \centering
+  \caption{Daten der beiden Gegenstandsweiten und Bildweiten einer Sammellinse unbekannter Brennweite in $\si{\centi\metre}$.}
+  \csvreader[tabular=c|c|c|c,
+  head=false, 
+  table head= Bildweite $b_1$ & Gegenstandsweite $g_1$ & Bildweite $b_2$ & Gegenstandsweite $g_2$ \\\midrule,
+  late after line= \\]
+  {Data/Bessel.csv}{1=\eins, 2=\zwei, 3=\drei, 4=\vier}{$\num{\eins}$ & $\num{\zwei}$ & $\num{\drei}$ & $\num{\vier}$}
+  \label{tab:bessel}
+\end{table}
+
+Nach \autoref{eq:bessel} ergeben sich für den Abstand Gegenstand-Bild $e$ und die Differenz der Weiten $d$ die gemittelten Werte:
+\begin{align*}
+  \bar{e} = 64\pm 17 \si{\centi\metre}\\
+  \bar{d} = 37\pm 16 \si{\centi\metre}
+\end{align*}
+Hieraus berechnet sich eine Brennweite von:
+\begin{align*}
+  f = 11\pm 10 \si{\centi\metre}
+\end{align*}
+
+\subsection{Brennweite eines Systems nach Abbe}
+Die Messwerte für die Bestimmung der Brennweite eines Linsensystems nach Abbe stehen in \autoref{tab:abbe}.
+
+\begin{table}
+  \centering
+  \caption{Daten der Gegenstandsgröße, der Bildgröße, sowie der Gegenstandsweite und Bildweite eines Linsensystems in $\si{\centi\metre}$.}
+  \csvreader[tabular=c|c|c|c,
+  head=false, 
+  table head= Bildgröße $B$ & Gegenstandsgröße $G$ & Bildweite $b'$ & Gegenstandsweite $g'$ \\\midrule,
+  late after line= \\]
+  {Data/Abbe.csv}{1=\eins, 2=\zwei, 3=\drei, 4=\vier}{$\num{\eins}$ & $\num{\zwei}$ & $\num{\drei}$ & $\num{\vier}$}
+  \label{tab:abbe}
+\end{table}
+
+Nach \autoref{eq:abbe} wird nun die Brennweite bestimmt.
+Hierfür kann der Abbildungsmaßstab $V$ durch $\frac{B}{G}$ ersetzt werden.\\
+In \autoref{fig:plot2} sind die Weiten je gegen $(1\ +\ \frac{B}{G})$ und $(1\ +\ \frac{G}{B})$ aufgetragen.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics{plot.pdf}
+  \caption{Bildweite und Gegenstandsweite sind hier mit der Funktion der Brennweite aufgetragen.}
+  \label{fig:plot2}
+\end{figure}
+\newpage
+Die Steigung der Geraden ergibt die Brennweite.
+
+\begin{align*}
+  \text{Steigung von b': } f_b=17.3\si{\centi\metre}\\
+  \text{Steigung von g': } f_g=17.4\si{\centi\metre}
+\end{align*}
