@@ -4,8 +4,11 @@
 Trifft ein Neutron auf ein Atomkern, so erhöht sich dessen Energie um die Bindungsenergie zwischen Neutron und Kern und zusätzlich um die kinetische Energie vom Ersteren. Dadurch können die Energiezustände der Nukleonen im Atomkern verändert werden, weil sie diese Energie in diskreten Massen absorbieren. So kommt folgende Reaktionsgleichung zustande:
 
 %die allererste Reaktionsgleichung auf der Anleitung hier rein
+\begin{equation}
+    \ce{^{m}_{Z}A}\ +\ \ce{^1_0n}\ \to\ \ce{^{m+1}_{Z}A^{*}}\ \to \ \ce{^{m+1}_{Z}A}\ +\ \gamma
+\end{equation}
 
-wobei \(A'\) der Kern im angeregten Zustand ist, \(m\) die Massenzahl, \(z\) die Ordnungszahl, \(n\) das Neutron und \(\gamma\) ein freigesetztes Neutrino ist.\\
+wobei \(A^{*}\) der Kern im angeregten Zustand ist, \(m\) die Massenzahl, \(z\) die Ordnungszahl, \(n\) das Neutron und \(\gamma\) ein freigesetztes Neutrino ist.\\
 Da der Kern mit der erhöhten Massenzahl allerdings nicht stabil ist, emittiert es zusätzlich noch ein Elektron auf Kosten seiner Ordnungszahl, die sich dann um eins erhöht.\\
 Die Wahrscheinlichkeit dafür, dass das Einfangen eines Neutrons überhaupt geschieht, heißt Wirkungsquerschnitt \(\sigma\). Diese lässt sich wie folgt berechnen:
 
@@ -38,6 +41,7 @@ Das Zerfallsgesetz lautet hierbei:
 
 \begin{equation}
     T_{\frac{1}{2}} = \frac{\ln{2}}{\lambda}.
+    \label{eq:hwz}
 \end{equation}
 
 \(N(t)\) erweist sich als schwierig zu messen, weshalb stattdessen die Anzahl der zerfallenen Kerne in einem festen Zeitintervall \(\Delta t\) gemessen und daraus ein \(N_{\Delta t}(t)\) ermittelt wird. Diese ist dann definiert als
@@ -58,16 +62,5 @@ Die ermittlung der einzelnen Aktivitäten erfolgt mithilfe von Ausgleichsgeraden
     \label{fig:zerfall}
 \end{figure}
 
-Die Unsicherheiten wurden gemäß der Gauß'schen Fehlerfortpflanzung berechnet.
-Der Mittelwert der Messungen lässt sich mit
-\begin{equation}
-    \overline{v}=\frac{1}{N} \sum_{j=1}^N v_j
-\end{equation}
-berechnen und die Unsicherheiten dementsprechend mit
-\begin{equation}
-    \Delta v = \sqrt{\frac{1}{N(N-1)} \sum_{j=1}^N (v-\overline{v})^2}.
-\end{equation}
-
-\(v_j\) sind dabei die einzelnen Messungen und \(N\) die Anzahl der Messungen.
 
 %Theorie klappt (ohne Reaktionsgleichung)!

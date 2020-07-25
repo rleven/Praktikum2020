@@ -1,2 +1,80 @@
+\newpage
 \section{Auswertung}
 \label{auswertung}
+
+\subsection{Berechnung des Nulleffekts}
+Es wurden sieben Messungen des Nulleffekts durchgeführt.
+
+\begin{table}
+    \centering
+    \caption{Messdaten des Nulleffekts.}
+    \begin{tabular}{c|c|c|c|c|c|c|c}
+        $N_0$ & 129 & 143 & 144 & 136 & 139 & 126 & 158\\
+    \end{tabular}
+\end{table}
+
+Aus diesen Werten ergibt sich ein Durchschnitt von $\bar{N_0} = 139 \pm 11$.\\
+Die Unsicherheiten werden gemäß der Gauß'schen Fehlerfortpflanzung berechnet.
+Der Mittelwert der Messungen lässt sich mit
+\begin{equation}
+    \overline{v}=\frac{1}{N} \sum_{j=1}^N v_j
+\end{equation}
+berechnen und die Unsicherheiten dementsprechend mit
+\begin{equation}
+    \Delta v = \sqrt{\frac{1}{N(N-1)} \sum_{j=1}^N (v-\overline{v})^2}.
+\end{equation}
+
+\(v_j\) sind dabei die einzelnen Messungen und \(N\) die Anzahl der Messungen.
+
+Falls Unsicherheiten auftreten, so wird die Gauß'sche Fehlerformel benutzt, um die resultierende Unsicherheit zu berechnen:
+\begin{equation}
+    \Delta f = \sqrt{\sum_{i=1}^N  \Bigl(\frac{\partial f}{\partial x_i}\Bigr)^2 (\Delta x_i)^2}
+    \label{eq:gauß}
+\end{equation}
+
+\subsection{Halbwertszeit von Vanadium}
+Um doppelte Fehler zu den Messwerten zu vermeiden, wird der Nulleffekt auf $N_0 = 139$ approximiert.\\
+Es muss beachtet werden, dass die Impulse in Zeitintervallen von $t = \SI{30}{\second}$ gemessen wurden,
+der Nulleffekt jedoch bei $t = \SI{300}{\second}$.
+Dies bedeutet, dass bevor der Nulleffekt abgezogen wird, dieser noch durch 10 geteilt werden muss.\\
+Die Fehlerverteilung ist Poisson-verteilt, sodass in \autoref{fig:vanadium} die Impulse pro Sekunde gegen die Zeit aufgetragen sind.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics{plot.pdf}
+    \caption{Impulse pro Sekunde von Vanadium in Abhängigkeit von der Zeit.}
+    \label{fig:vanadium}
+\end{figure}
+\newpage
+In \autoref{fig:vanadium} sind zwei Ausgleichsgeraden eingezeichnet.
+Die rote Ausgleichsgerade ist ein Fit über alle Messwerte und deswegen ungenau, da besonders bei niedrigen Messwerten der Nulleffekt für eine große Ungenauigkeit sorgt, wie im Plot zu sehen ist.
+Deswegen wurde eine zweite Ausgleichsgerade eingefügt, die lediglich den Bereich bis zur doppelten Halbwertszeit abdeckt.\\
+Die Berechnung der Halbwertszeit erfolgt nach \autoref{eq:hwz} und \autoref{eq:gauß}, wobei die Zerfallskonstante $\lambda$ dem Betrag der Steigung der Ausgleichsgerade entspricht.\\
+Die Halbwertszeit über alle Messwerte beträgt:
+\begin{align*}
+    T^{all}_{1/2} = 218\pm 12\si{\second}
+\end{align*}
+Sobald nur der Bereich bis ca. $\SI{440}{\second}$ betrachtet wird, ändert sich die Halbwertszeit geringfügig:
+\begin{align*}
+    T^{cut}_{1/2} = 215\pm 16\si{\second}
+\end{align*}
+
+\subsection{Halbwertszeit von Rhodium}
+Zur Bestimmung der verschiedenen Halbwertszeiten von \ce{^{104}Rh} wird zunächst wie auch bei Vanadium der Nulleffekt von den Messwerten abgezogen.
+Es werden wieder die Impulse pro Sekunde betrachtet.\\
+In \autoref{fig:rhodium} sind die Messdaten halblogarithmisch aufgetragen.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics{plot1.pdf}
+    \caption{Messwerte der Zerfallimpulse von \ce{^{104}Rh}, sowie die Ausgleichsgerade für den langsamen Zerfall und den kurzen Zerfall, ebenso die errechnete Kurve aus beiden Ausgleichsgeraden.}
+    \label{fig:rhodium}
+\end{figure}
+
+In diesem Plot ist die blaue Ausgleichsgerade der langsame Zerfall und die grüne Ausgleichsgerade der kurze Zerfall.
+Daraus lassen sich die verschiedenen Halbwertszeiten berechnen, die Rhodium hat:
+\begin{align*}
+    T^{short}_{1/2} = 36.7\pm 1.4\si{\second}\\
+    T^{long}_{1/2} = 217\pm 29\si{\second}
+\end{align*}
+Aus beiden Geraden errechnet sich eine Kurve die mit den Messwerten übereinstimmt.
